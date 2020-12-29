@@ -1,9 +1,9 @@
 {
-  "name": "",
+  "name": "@mtucourses/scrapper",
   "version": "0.1.0",
   "description": "",
   "main": "dist/index.js",
-  "repository": "git@github.com:codetheweb/",
+  "repository": "git@github.com:Michigan-Tech-Courses/scrapper",
   "author": "Max Isom <hi@maxisom.me>",
   "license": "MIT",
   "files": [
@@ -14,24 +14,22 @@
     "lint": "eslint 'src/**/*.ts'",
     "lint-fix": "eslint 'src/**/*.ts' --fix",
     "clean": "rm -rf dist dts",
-    "test": "npm run lint",
     "build": "tsc",
     "watch": "tsc --watch",
-    "prepack": "npm run clean && npm run build",
-    "start": "node dist/index.js",
-    "dev": "nodemon"
+    "prepack": "yarn clean && yarn build",
+    "start": "node dist/index.js"
   },
   "devDependencies": {
-    "@types/node": "^13.9.5",
-    "@typescript-eslint/eslint-plugin": "^2.25.0",
-    "@typescript-eslint/parser": "^2.25.0",
-    "eslint": "^6.8.0",
-    "eslint-config-xo": "^0.29.1",
-    "eslint-config-xo-typescript": "^0.27.0",
-    "husky": "^4.2.3",
-    "nodemon": "^2.0.2",
-    "ts-node": "^8.8.1",
-    "typescript": "^3.8.3"
+    "@types/node": "^14.14.16",
+    "@typescript-eslint/eslint-plugin": "^4.11.1",
+    "@typescript-eslint/parser": "^4.11.1",
+    "eslint": "^7.16.0",
+    "eslint-config-xo": "^0.33.1",
+    "eslint-config-xo-typescript": "^0.37.0",
+    "husky": "^4.3.6",
+    "lint-staged": "^10.5.3",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
   },
   "eslintConfig": {
     "extends": [
@@ -51,9 +49,13 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm test && npm run build"
+      "pre-commit": "lint-staged && yarn build"
     }
   },
-  "dependencies": {
-  }
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint 'src/**/*.ts' --fix"
+    ]
+  },
+  "dependencies": {}
 }
