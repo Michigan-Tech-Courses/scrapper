@@ -17,3 +17,25 @@ const {getAllSections} = require('@mtucourses/scrapper');
 ```
 
 See the [documentation for details](docs/modules/index.md).
+
+## 🧰  Development
+
+```bash
+# First:
+# install dependencies
+yarn install
+
+# then:
+# build in watch mode
+yarn build:watch
+
+# and you can:
+
+# run tests
+yarn test
+
+# run tests in watch mode
+yarn test:watch
+```
+
+To publish a new package version, run `npm version [patch|minor|major]` and then `git push && git push --tags` on the master branch.

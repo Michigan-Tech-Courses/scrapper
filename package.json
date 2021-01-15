@@ -20,7 +20,8 @@
     "build": "tsc",
     "build:watch": "tsc --watch",
     "document": "typedoc",
-    "prepack": "yarn clean && yarn build && yarn document",
+    "preversion": "yarn document && git add docs",
+    "prepack": "yarn clean && yarn build",
     "start": "node dist/index.js"
   },
   "devDependencies": {
