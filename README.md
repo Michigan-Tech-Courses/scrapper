@@ -1,3 +1,15 @@
-# TypeScript Package Template
+# @mtucourses/scrapper
 
-With XO/ESLint, nodemon, and Docker.
+Scrapes courses offered at [Michigan Tech](https://www.mtu.edu/) for a given semester.
+
+## 🏗 Usage
+
+```js
+const courses = require('@mtucourses/scrapper');
+
+(async () => {
+  const offeredCourses = await courses.get();
+
+  console.log(offeredCourses);
+})();
+```

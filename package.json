@@ -11,11 +11,13 @@
     "dts"
   ],
   "scripts": {
-    "lint": "eslint 'src/**/*.ts'",
-    "lint-fix": "eslint 'src/**/*.ts' --fix",
+    "lint": "eslint '{src,test}/**/*.ts'",
+    "lint:fix": "eslint '{src,test}/**/*.ts' --fix",
+    "test": "ava",
+    "test:watch": "ava --watch",
     "clean": "rm -rf dist dts",
     "build": "tsc",
-    "watch": "tsc --watch",
+    "build:watch": "tsc --watch",
     "prepack": "yarn clean && yarn build",
     "start": "node dist/index.js"
   },
@@ -23,6 +25,7 @@
     "@types/node": "^14.14.16",
     "@typescript-eslint/eslint-plugin": "^4.11.1",
     "@typescript-eslint/parser": "^4.11.1",
+    "ava": "^3.14.0",
     "eslint": "^7.16.0",
     "eslint-config-xo": "^0.33.1",
     "eslint-config-xo-typescript": "^0.37.0",
@@ -38,7 +41,7 @@
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
-      "project": "./tsconfig.json"
+      "project": "./tsconfig.eslint.json"
     },
     "rules": {
       "new-cap": "off",
@@ -54,8 +57,20 @@
   },
   "lint-staged": {
     "*.{js,ts,tsx}": [
-      "eslint 'src/**/*.ts' --fix"
+      "eslint '{src,test}/**/*.ts' --fix"
     ]
   },
-  "dependencies": {}
+  "ava": {
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.5",
+    "got": "^11.8.1",
+    "nock": "^13.0.5"
+  }
 }
