@@ -1,16 +1,16 @@
-[@mtucourses/scrapper](../../README.md) / [Modules](../../modules.md) / [lib/types](../../modules/lib_types.md) / ESemester
+[@mtucourses/scrapper](../README.md) / [Modules](../modules.md) / [index](../modules/index.md) / ESemester
 
 # Enumeration: ESemester
 
-[lib/types](../../modules/lib_types.md).ESemester
+[index](../modules/index.md).ESemester
 
 ## Table of contents
 
 ### Enumeration members
 
-- [fall](types.esemester.md#fall)
-- [spring](types.esemester.md#spring)
-- [summer](types.esemester.md#summer)
+- [fall](index.esemester.md#fall)
+- [spring](index.esemester.md#spring)
+- [summer](index.esemester.md#summer)
 
 ## Enumeration members
 

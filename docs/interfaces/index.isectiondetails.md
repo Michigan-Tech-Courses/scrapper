@@ -1,8 +1,8 @@
-[@mtucourses/scrapper](../../README.md) / [Modules](../../modules.md) / [lib/types](../../modules/lib_types.md) / ISectionDetails
+[@mtucourses/scrapper](../README.md) / [Modules](../modules.md) / [index](../modules/index.md) / ISectionDetails
 
 # Interface: ISectionDetails
 
-[lib/types](../../modules/lib_types.md).ISectionDetails
+[index](../modules/index.md).ISectionDetails
 
 ## Hierarchy
 
@@ -12,10 +12,10 @@
 
 ### Properties
 
-- [description](types.isectiondetails.md#description)
-- [instructors](types.isectiondetails.md#instructors)
-- [semestersOffered](types.isectiondetails.md#semestersoffered)
-- [title](types.isectiondetails.md#title)
+- [description](index.isectiondetails.md#description)
+- [instructors](index.isectiondetails.md#instructors)
+- [semestersOffered](index.isectiondetails.md#semestersoffered)
+- [title](index.isectiondetails.md#title)
 
 ## Properties
 
@@ -37,7 +37,7 @@ ___
 
 ### semestersOffered
 
-• **semestersOffered**: [*ESemester*](../../enums/lib/types.esemester.md)[]
+• **semestersOffered**: [*ESemester*](../enums/lib/types.esemester.md)[]
 
 Defined in: [lib/types.ts:53](https://github.com/Michigan-Tech-Courses/scrapper/blob/0bef693/src/lib/types.ts#L53)
 

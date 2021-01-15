@@ -1,8 +1,8 @@
-[@mtucourses/scrapper](../../README.md) / [Modules](../../modules.md) / [lib/types](../../modules/lib_types.md) / IFaculty
+[@mtucourses/scrapper](../README.md) / [Modules](../modules.md) / [index](../modules/index.md) / IFaculty
 
 # Interface: IFaculty
 
-[lib/types](../../modules/lib_types.md).IFaculty
+[index](../modules/index.md).IFaculty
 
 ## Hierarchy
 
@@ -12,14 +12,14 @@
 
 ### Properties
 
-- [email](types.ifaculty.md#email)
-- [interests](types.ifaculty.md#interests)
-- [name](types.ifaculty.md#name)
-- [occupations](types.ifaculty.md#occupations)
-- [office](types.ifaculty.md#office)
-- [phone](types.ifaculty.md#phone)
-- [photoURL](types.ifaculty.md#photourl)
-- [websiteURL](types.ifaculty.md#websiteurl)
+- [email](index.ifaculty.md#email)
+- [interests](index.ifaculty.md#interests)
+- [name](index.ifaculty.md#name)
+- [occupations](index.ifaculty.md#occupations)
+- [office](index.ifaculty.md#office)
+- [phone](index.ifaculty.md#phone)
+- [photoURL](index.ifaculty.md#photourl)
+- [websiteURL](index.ifaculty.md#websiteurl)
 
 ## Properties
 

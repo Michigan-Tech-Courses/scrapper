@@ -1,8 +1,8 @@
-[@mtucourses/scrapper](../../README.md) / [Modules](../../modules.md) / [lib/types](../../modules/lib_types.md) / IScrappedSection
+[@mtucourses/scrapper](../README.md) / [Modules](../modules.md) / [index](../modules/index.md) / IScrappedSection
 
 # Interface: IScrappedSection
 
-[lib/types](../../modules/lib_types.md).IScrappedSection
+[index](../modules/index.md).IScrappedSection
 
 ## Hierarchy
 
@@ -12,22 +12,22 @@
 
 ### Properties
 
-- [cmp](types.iscrappedsection.md#cmp)
-- [creditRange](types.iscrappedsection.md#creditrange)
-- [crn](types.iscrappedsection.md#crn)
-- [crse](types.iscrappedsection.md#crse)
-- [dateRange](types.iscrappedsection.md#daterange)
-- [days](types.iscrappedsection.md#days)
-- [fee](types.iscrappedsection.md#fee)
-- [instructors](types.iscrappedsection.md#instructors)
-- [location](types.iscrappedsection.md#location)
-- [seats](types.iscrappedsection.md#seats)
-- [seatsAvailable](types.iscrappedsection.md#seatsavailable)
-- [seatsTaken](types.iscrappedsection.md#seatstaken)
-- [section](types.iscrappedsection.md#section)
-- [subject](types.iscrappedsection.md#subject)
-- [timeRange](types.iscrappedsection.md#timerange)
-- [title](types.iscrappedsection.md#title)
+- [cmp](index.iscrappedsection.md#cmp)
+- [creditRange](index.iscrappedsection.md#creditrange)
+- [crn](index.iscrappedsection.md#crn)
+- [crse](index.iscrappedsection.md#crse)
+- [dateRange](index.iscrappedsection.md#daterange)
+- [days](index.iscrappedsection.md#days)
+- [fee](index.iscrappedsection.md#fee)
+- [instructors](index.iscrappedsection.md#instructors)
+- [location](index.iscrappedsection.md#location)
+- [seats](index.iscrappedsection.md#seats)
+- [seatsAvailable](index.iscrappedsection.md#seatsavailable)
+- [seatsTaken](index.iscrappedsection.md#seatstaken)
+- [section](index.iscrappedsection.md#section)
+- [subject](index.iscrappedsection.md#subject)
+- [timeRange](index.iscrappedsection.md#timerange)
+- [title](index.iscrappedsection.md#title)
 
 ## Properties
 

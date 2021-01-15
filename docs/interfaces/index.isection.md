@@ -1,8 +1,8 @@
-[@mtucourses/scrapper](../../README.md) / [Modules](../../modules.md) / [lib/types](../../modules/lib_types.md) / ISection
+[@mtucourses/scrapper](../README.md) / [Modules](../modules.md) / [index](../modules/index.md) / ISection
 
 # Interface: ISection
 
-[lib/types](../../modules/lib_types.md).ISection
+[index](../modules/index.md).ISection
 
 ## Hierarchy
 
@@ -12,19 +12,19 @@
 
 ### Properties
 
-- [cmp](types.isection.md#cmp)
-- [creditRange](types.isection.md#creditrange)
-- [crn](types.isection.md#crn)
-- [dateRange](types.isection.md#daterange)
-- [days](types.isection.md#days)
-- [fee](types.isection.md#fee)
-- [instructors](types.isection.md#instructors)
-- [location](types.isection.md#location)
-- [seats](types.isection.md#seats)
-- [seatsAvailable](types.isection.md#seatsavailable)
-- [seatsTaken](types.isection.md#seatstaken)
-- [section](types.isection.md#section)
-- [timeRange](types.isection.md#timerange)
+- [cmp](index.isection.md#cmp)
+- [creditRange](index.isection.md#creditrange)
+- [crn](index.isection.md#crn)
+- [dateRange](index.isection.md#daterange)
+- [days](index.isection.md#days)
+- [fee](index.isection.md#fee)
+- [instructors](index.isection.md#instructors)
+- [location](index.isection.md#location)
+- [seats](index.isection.md#seats)
+- [seatsAvailable](index.isection.md#seatsavailable)
+- [seatsTaken](index.isection.md#seatstaken)
+- [section](index.isection.md#section)
+- [timeRange](index.isection.md#timerange)
 
 ## Properties
 

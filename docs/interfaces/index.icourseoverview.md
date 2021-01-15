@@ -1,8 +1,8 @@
-[@mtucourses/scrapper](../../README.md) / [Modules](../../modules.md) / [lib/types](../../modules/lib_types.md) / ICourseOverview
+[@mtucourses/scrapper](../README.md) / [Modules](../modules.md) / [index](../modules/index.md) / ICourseOverview
 
 # Interface: ICourseOverview
 
-[lib/types](../../modules/lib_types.md).ICourseOverview
+[index](../modules/index.md).ICourseOverview
 
 ## Hierarchy
 
@@ -12,10 +12,10 @@
 
 ### Properties
 
-- [crse](types.icourseoverview.md#crse)
-- [sections](types.icourseoverview.md#sections)
-- [subject](types.icourseoverview.md#subject)
-- [title](types.icourseoverview.md#title)
+- [crse](index.icourseoverview.md#crse)
+- [sections](index.icourseoverview.md#sections)
+- [subject](index.icourseoverview.md#subject)
+- [title](index.icourseoverview.md#title)
 
 ## Properties
 
@@ -29,7 +29,7 @@ ___
 
 ### sections
 
-• **sections**: [*ISection*](types.isection.md)[]
+• **sections**: [*ISection*](lib/types.isection.md)[]
 
 Defined in: [lib/types.ts:40](https://github.com/Michigan-Tech-Courses/scrapper/blob/0bef693/src/lib/types.ts#L40)
 

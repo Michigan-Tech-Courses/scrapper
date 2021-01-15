@@ -4,6 +4,18 @@
 
 ## Table of contents
 
+### Enumerations
+
+- [ESemester](../enums/index.esemester.md)
+
+### Interfaces
+
+- [ICourseOverview](../interfaces/index.icourseoverview.md)
+- [IFaculty](../interfaces/index.ifaculty.md)
+- [IScrappedSection](../interfaces/index.iscrappedsection.md)
+- [ISection](../interfaces/index.isection.md)
+- [ISectionDetails](../interfaces/index.isectiondetails.md)
+
 ### Functions
 
 - [getAllFacultyByDepartment](index.md#getallfacultybydepartment)
@@ -18,7 +30,7 @@
 
 **Returns:** *Promise*<IDepartmentAndPeople[]\>
 
-Defined in: [lib/faculty.ts:13](https://github.com/Michigan-Tech-Courses/scrapper/blob/99c1f8f/src/lib/faculty.ts#L13)
+Defined in: [lib/faculty.ts:13](https://github.com/Michigan-Tech-Courses/scrapper/blob/0bef693/src/lib/faculty.ts#L13)
 
 ___
 
@@ -28,7 +40,7 @@ ___
 
 **Returns:** *Promise*<[*ICourseOverview*](../interfaces/lib/types.icourseoverview.md)[]\>
 
-Defined in: [lib/sections.ts:7](https://github.com/Michigan-Tech-Courses/scrapper/blob/99c1f8f/src/lib/sections.ts#L7)
+Defined in: [lib/sections.ts:7](https://github.com/Michigan-Tech-Courses/scrapper/blob/0bef693/src/lib/sections.ts#L7)
 
 ___
 
@@ -44,4 +56,4 @@ Name | Type |
 
 **Returns:** *Promise*<[*ISectionDetails*](../interfaces/lib/types.isectiondetails.md)\>
 
-Defined in: [lib/sections.ts:160](https://github.com/Michigan-Tech-Courses/scrapper/blob/99c1f8f/src/lib/sections.ts#L160)
+Defined in: [lib/sections.ts:160](https://github.com/Michigan-Tech-Courses/scrapper/blob/0bef693/src/lib/sections.ts#L160)
