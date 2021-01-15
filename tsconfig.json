@@ -13,5 +13,9 @@
     "sourceMap": true
   },
   "include": ["src"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "typedocOptions": {
+    "entryPoints": ["src/index.ts", "src/lib/types.ts"],
+    "out": "docs"
+  }
 }
