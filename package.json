@@ -10,6 +10,7 @@
     "mtu"
   ],
   "main": "dist/index.js",
+  "types": "dts/index.d.ts",
   "repository": "git@github.com:Michigan-Tech-Courses/scrapper",
   "author": "Max Isom <hi@maxisom.me>",
   "license": "MIT",
