@@ -1,0 +1,17 @@
+name: Lint
+
+on: push
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+        
+      - uses: actions/setup-node@v2.1.4
+
+      - name: Install dependencies
+        uses: bahmutov/npm-install@v1
+
+      - name: Lint
+        run: yarn lint
