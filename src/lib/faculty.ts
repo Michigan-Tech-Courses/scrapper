@@ -2,7 +2,7 @@ import got from 'got/dist/source';
 import pLimit from 'p-limit';
 import cheerio from 'cheerio';
 import {FACULTY_PAGES} from './constants';
-import {IFaculty} from '../types';
+import {IFaculty} from './types';
 import {removeEmptyElements, resolvePartialURL, trim} from './utils';
 
 interface IDepartmentAndPeople {

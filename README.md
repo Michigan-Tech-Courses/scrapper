@@ -5,11 +5,13 @@ Scrapes courses offered at [Michigan Tech](https://www.mtu.edu/) for a given sem
 ## 🏗 Usage
 
 ```js
-const courses = require('@mtucourses/scrapper');
+const {getAllSections} = require('@mtucourses/scrapper');
 
 (async () => {
-  const offeredCourses = await courses.get();
+  const sections = await getAllSections();
 
-  console.log(offeredCourses);
+  console.log(sections);
 })();
 ```
+
+See the [documentation for details](docs/modules/index.md).

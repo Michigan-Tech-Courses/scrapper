@@ -6,14 +6,18 @@ import * as constants from './helpers/constants';
 
 td.replace('../src/lib/constants', constants);
 
-import courses from '../src';
-import {getAllFacultyByDepartment} from '../src/lib/faculty';
+import {getAllFacultyByDepartment, getAllSections, getSectionDetails} from '../src';
 
-// Test('parses courses', async t => {
-//   const offered = await courses.get();
-//   console.log(JSON.stringify(offered))
-// 	t.pass();
-// });
+test('getAllSections() works correctly', async t => {
+  nock('https://www.banweb.mtu.edu')
+    .get('/pls/owa/bzckschd.p_get_crse_unsec')
+    .query(true)
+    .reply(200, await fs.promises.readFile('./test/resources/all-sections.html'));
+
+  const sections = await getAllSections();
+
+  t.snapshot(sections);
+});
 
 test('getSectionDetails() works correctly', async t => {
   const options = {term: '202008', subject: 'CS', crse: '123', crn: '123'};
@@ -29,12 +33,12 @@ test('getSectionDetails() works correctly', async t => {
     })
     .reply(200, response);
 
-  const section = await courses.getSectionDetails(options);
+  const section = await getSectionDetails(options);
 
   t.snapshot(section);
 });
 
-// Details with multiple instructors
+// TODO: add test for details with multiple instructors
 
 test('getSectionDetails() throws if section doesn\'t exist', async t => {
   const options = {term: '202008', subject: 'CS', crse: '123', crn: '123'};
@@ -50,10 +54,10 @@ test('getSectionDetails() throws if section doesn\'t exist', async t => {
     })
     .reply(200, response);
 
-  await t.throwsAsync(async () => courses.getSectionDetails(options), {message: 'Course not found'});
+  await t.throwsAsync(async () => getSectionDetails(options), {message: 'Course not found'});
 });
 
-test('get faculty', async t => {
+test('getAllFacultyByDepartment() works correctly', async t => {
   nock('https://www.mtu.edu')
     .get('/cs/department/people/')
     .reply(200, await fs.promises.readFile('./test/resources/cs-faculty.html'))
