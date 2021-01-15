@@ -18,7 +18,7 @@
 
 • **fall**: = "Fall"
 
-Defined in: lib/types.ts:44
+Defined in: [lib/types.ts:44](https://github.com/Michigan-Tech-Courses/scrapper/blob/8f72676/src/lib/types.ts#L44)
 
 ___
 
@@ -26,7 +26,7 @@ ___
 
 • **spring**: = "Spring"
 
-Defined in: lib/types.ts:45
+Defined in: [lib/types.ts:45](https://github.com/Michigan-Tech-Courses/scrapper/blob/8f72676/src/lib/types.ts#L45)
 
 ___
 
@@ -34,4 +34,4 @@ ___
 
 • **summer**: = "Summer"
 
-Defined in: lib/types.ts:46
+Defined in: [lib/types.ts:46](https://github.com/Michigan-Tech-Courses/scrapper/blob/8f72676/src/lib/types.ts#L46)
