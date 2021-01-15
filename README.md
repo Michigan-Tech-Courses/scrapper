@@ -2,7 +2,7 @@
 
 [![codecov](https://codecov.io/gh/Michigan-Tech-Courses/scrapper/branch/master/graph/badge.svg?token=E7AG8R5XN0)](https://codecov.io/gh/Michigan-Tech-Courses/scrapper)
 
-Scrapes courses offered at [Michigan Tech](https://www.mtu.edu/) for a given semester.
+Scrapes various types of information from [Michigan Tech](https://www.mtu.edu/), including faculty members and offered courses.
 
 ## 🏗 Usage
 
