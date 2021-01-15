@@ -52,3 +52,14 @@ export interface ISectionDetails {
   instructors: string[];
   semestersOffered: ESemester[];
 }
+
+export interface IFaculty {
+  name: string;
+  occupations: string[];
+  email: string | null;
+  phone: string | null;
+  office: string | null;
+  websiteURL: string | null;
+  photoURL: string | null;
+  interests: string[];
+}

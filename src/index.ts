@@ -2,8 +2,7 @@ import got from 'got';
 import cheerio from 'cheerio';
 import {URLSearchParams} from 'url';
 import {ICourseOverview, IScrappedSection, ISectionDetails} from './types';
-
-const trim = (s: string) => s.replace(/\s+/g, ' ').trim();
+import {trim} from './lib/utils';
 
 const get = async (): Promise<ICourseOverview[]> => {
   const year = new Date().getFullYear();
