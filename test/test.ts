@@ -6,7 +6,7 @@ import * as constants from './helpers/constants';
 
 td.replace('../src/lib/constants', constants);
 
-import {getAllFacultyByDepartment, getAllSections, getSectionDetails} from '../src';
+import {getAllFaculty, getAllSections, getSectionDetails} from '../src';
 
 test('getAllSections() works correctly', async t => {
   nock('https://www.banweb.mtu.edu')
@@ -57,7 +57,7 @@ test('getSectionDetails() throws if section doesn\'t exist', async t => {
   await t.throwsAsync(async () => getSectionDetails(options), {message: 'Course not found'});
 });
 
-test('getAllFacultyByDepartment() works correctly', async t => {
+test('getAllFaculty() works correctly', async t => {
   nock('https://www.mtu.edu')
     .get('/cs/department/people/')
     .reply(200, await fs.promises.readFile('./test/resources/cs-faculty.html'))
@@ -65,7 +65,7 @@ test('getAllFacultyByDepartment() works correctly', async t => {
     .get('/chemistry/people-groups/faculty-staff/')
     .reply(200, await fs.promises.readFile('./test/resources/chemistry-faculty.html'));
 
-  const people = await getAllFacultyByDepartment();
+  const people = await getAllFaculty();
 
   t.snapshot(people);
 });

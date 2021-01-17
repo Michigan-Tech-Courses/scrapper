@@ -5,12 +5,7 @@ import {FACULTY_PAGES} from './constants';
 import {IFaculty} from './types';
 import {removeEmptyElements, resolvePartialURL, trim} from './utils';
 
-interface IDepartmentAndPeople {
-  department: string;
-  people: IFaculty[];
-}
-
-export const getAllFacultyByDepartment = async (): Promise<IDepartmentAndPeople[]> => {
+export const getAllFaculty = async () => {
   const limit = pLimit(3);
 
   const scrappedPages = await Promise.all(FACULTY_PAGES.map(pageURL => limit(async () => {
@@ -45,6 +40,7 @@ export const getAllFacultyByDepartment = async (): Promise<IDepartmentAndPeople[
 
       people.push({
         name,
+        department,
         occupations: removeEmptyElements(occupations),
         email: email === '' ? null : email,
         phone: phone === '' ? null : phone,
@@ -55,11 +51,8 @@ export const getAllFacultyByDepartment = async (): Promise<IDepartmentAndPeople[
       });
     });
 
-    return {
-      department,
-      people
-    };
+    return people;
   })));
 
-  return ([] as IDepartmentAndPeople[]).concat(...scrappedPages);
+  return ([] as IFaculty[]).concat(...scrappedPages);
 };
