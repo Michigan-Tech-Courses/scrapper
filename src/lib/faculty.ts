@@ -5,7 +5,7 @@ import {FACULTY_PAGES} from './constants';
 import {IFaculty} from './types';
 import {removeEmptyElements, resolvePartialURL, trim} from './utils';
 
-export const getAllFaculty = async () => {
+export const getAllFaculty = async (): Promise<IFaculty[]> => {
   const limit = pLimit(3);
 
   const scrappedPages = await Promise.all(FACULTY_PAGES.map(pageURL => limit(async () => {
@@ -40,7 +40,7 @@ export const getAllFaculty = async () => {
 
       people.push({
         name,
-        department,
+        departments: [department],
         occupations: removeEmptyElements(occupations),
         email: email === '' ? null : email,
         phone: phone === '' ? null : phone,
@@ -54,5 +54,24 @@ export const getAllFaculty = async () => {
     return people;
   })));
 
-  return ([] as IFaculty[]).concat(...scrappedPages);
+  const flatPeople = ([] as IFaculty[]).concat(...scrappedPages);
+
+  // Some people may work in multiple departments and thus appear twice
+  const peopleMap = new Map<string, IFaculty>();
+
+  // Merge with departments
+  flatPeople.forEach(person => {
+    const personInMap = peopleMap.get(person.name);
+
+    if (personInMap) {
+      peopleMap.set(person.name, {
+        ...personInMap,
+        departments: [...personInMap.departments, ...person.departments]
+      });
+    } else {
+      peopleMap.set(person.name, person);
+    }
+  });
+
+  return Array.from(peopleMap.values());
 };

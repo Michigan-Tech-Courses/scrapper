@@ -55,7 +55,7 @@ export interface ISectionDetails {
 
 export interface IFaculty {
   name: string;
-  department: string;
+  departments: string[];
   occupations: string[];
   email: string | null;
   phone: string | null;
