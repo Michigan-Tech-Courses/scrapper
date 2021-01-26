@@ -2,17 +2,17 @@ import got from 'got';
 import cheerio from 'cheerio';
 import {URLSearchParams} from 'url';
 import {ICourseOverview, IScrappedSection, ISectionDetails} from './types';
-import {trim} from './utils';
+import {trim, getTermId} from './utils';
 
-export const getAllSections = async (): Promise<ICourseOverview[]> => {
-  const year = new Date().getFullYear();
-  const month = 8;
-
-  const termId = `${year}${month.toString().padStart(2, '0')}`;
-
+/*
+ * The month of term must be sent to the first month of a term at Michigan Tech.
+ * const fallTerm = new Date();
+ * fallTerm.setMonth(7); // zero-indexed
+ */
+export const getAllSections = async (term: Date): Promise<ICourseOverview[]> => {
   const response = await got.get('https://www.banweb.mtu.edu/pls/owa/bzckschd.p_get_crse_unsec', {
     searchParams: new URLSearchParams([
-      ['term_in', termId],
+      ['term_in', getTermId(term)],
       ['sel_subj', 'dummy'],
       ['sel_day', 'dummy'],
       ['sel_schd', 'dummy'],
@@ -157,10 +157,10 @@ export const getAllSections = async (): Promise<ICourseOverview[]> => {
   return courses;
 };
 
-export const getSectionDetails = async ({term, subject, crse, crn}: {term: string; subject: string; crse: string; crn: string}): Promise<ISectionDetails> => {
+export const getSectionDetails = async ({term, subject, crse, crn}: {term: Date; subject: string; crse: string; crn: string}): Promise<ISectionDetails> => {
   const {body} = await got.get('https://www.banweb.mtu.edu/owassb/bwckschd.p_disp_listcrse', {
     searchParams: {
-      term_in: term,
+      term_in: getTermId(term),
       subj_in: subject,
       crse_in: crse,
       crn_in: crn

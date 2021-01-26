@@ -15,3 +15,5 @@ export const resolvePartialURL = (url: string) => {
 
   return url;
 };
+
+export const getTermId = (term: Date) => `${term.getFullYear()}${(term.getMonth() + 1).toString().padStart(2, '0')}`;
