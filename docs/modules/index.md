@@ -30,30 +30,36 @@
 
 **Returns:** *Promise*<[*IFaculty*](../interfaces/lib/types.ifaculty.md)[]\>
 
-Defined in: [lib/faculty.ts:8](https://github.com/Michigan-Tech-Courses/scrapper/blob/696a7e9/src/lib/faculty.ts#L8)
+Defined in: [lib/faculty.ts:8](https://github.com/Michigan-Tech-Courses/scrapper/blob/751baa1/src/lib/faculty.ts#L8)
 
 ___
 
 ### getAllSections
 
-▸ `Const`**getAllSections**(): *Promise*<[*ICourseOverview*](../interfaces/lib/types.icourseoverview.md)[]\>
-
-**Returns:** *Promise*<[*ICourseOverview*](../interfaces/lib/types.icourseoverview.md)[]\>
-
-Defined in: [lib/sections.ts:7](https://github.com/Michigan-Tech-Courses/scrapper/blob/696a7e9/src/lib/sections.ts#L7)
-
-___
-
-### getSectionDetails
-
-▸ `Const`**getSectionDetails**(`__namedParameters`: { `crn`: *string* ; `crse`: *string* ; `subject`: *string* ; `term`: *string*  }): *Promise*<[*ISectionDetails*](../interfaces/lib/types.isectiondetails.md)\>
+▸ `Const`**getAllSections**(`term`: Date): *Promise*<[*ICourseOverview*](../interfaces/lib/types.icourseoverview.md)[]\>
 
 #### Parameters:
 
 Name | Type |
 ------ | ------ |
-`__namedParameters` | { `crn`: *string* ; `crse`: *string* ; `subject`: *string* ; `term`: *string*  } |
+`term` | Date |
+
+**Returns:** *Promise*<[*ICourseOverview*](../interfaces/lib/types.icourseoverview.md)[]\>
+
+Defined in: [lib/sections.ts:12](https://github.com/Michigan-Tech-Courses/scrapper/blob/751baa1/src/lib/sections.ts#L12)
+
+___
+
+### getSectionDetails
+
+▸ `Const`**getSectionDetails**(`__namedParameters`: { `crn`: *string* ; `crse`: *string* ; `subject`: *string* ; `term`: Date  }): *Promise*<[*ISectionDetails*](../interfaces/lib/types.isectiondetails.md)\>
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`__namedParameters` | { `crn`: *string* ; `crse`: *string* ; `subject`: *string* ; `term`: Date  } |
 
 **Returns:** *Promise*<[*ISectionDetails*](../interfaces/lib/types.isectiondetails.md)\>
 
-Defined in: [lib/sections.ts:160](https://github.com/Michigan-Tech-Courses/scrapper/blob/696a7e9/src/lib/sections.ts#L160)
+Defined in: [lib/sections.ts:160](https://github.com/Michigan-Tech-Courses/scrapper/blob/751baa1/src/lib/sections.ts#L160)

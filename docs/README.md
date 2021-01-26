@@ -12,7 +12,10 @@ Scrapes various types of information from [Michigan Tech](https://www.mtu.edu/),
 const {getAllSections} = require('@mtucourses/scrapper');
 
 (async () => {
-  const sections = await getAllSections();
+  const fallTerm = new Date();
+  fallTerm.setFullYear(2020, 7);
+
+  const sections = await getAllSections(fallTerm);
 
   console.log(sections);
 })();
