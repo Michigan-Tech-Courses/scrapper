@@ -2,7 +2,7 @@ import got from 'got';
 import cheerio from 'cheerio';
 import {URLSearchParams} from 'url';
 import {ICourseOverview, IScrappedSection, ISectionDetails} from './types';
-import {trim, getTermId} from './utils';
+import {trim, getTermId, protectNaN} from './utils';
 
 /*
  * The month of term must be sent to the first month of a term at Michigan Tech.
@@ -108,13 +108,13 @@ export const getAllSections = async (term: Date): Promise<ICourseOverview[]> => 
       title,
       days,
       timeRange: startTime === 'TBA' ? null : [startTime, endTime],
-      seats,
-      seatsTaken,
-      seatsAvailable,
+      seats: protectNaN(seats),
+      seatsTaken: protectNaN(seatsTaken),
+      seatsAvailable: protectNaN(seatsAvailable),
       instructors: instructor,
       dateRange: [startDate, endDate],
       location,
-      fee
+      fee: protectNaN(fee)
     });
   });
 
@@ -143,9 +143,9 @@ export const getAllSections = async (term: Date): Promise<ICourseOverview[]> => 
         creditRange: s.creditRange,
         days: s.days,
         timeRange: s.timeRange,
-        seats: s.seats ?? 0,
-        seatsTaken: s.seatsTaken ?? 0,
-        seatsAvailable: s.seatsAvailable ?? 0,
+        seats: s.seats,
+        seatsTaken: s.seatsTaken,
+        seatsAvailable: s.seatsAvailable,
         instructors: s.instructors.split(',').map(i => trim(i)),
         dateRange: s.dateRange,
         location: s.location,

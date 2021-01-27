@@ -17,3 +17,5 @@ export const resolvePartialURL = (url: string) => {
 };
 
 export const getTermId = (term: Date) => `${term.getFullYear()}${(term.getMonth() + 1).toString().padStart(2, '0')}`;
+
+export const protectNaN = (n: number) => Number.isNaN(n) ? 0 : n;

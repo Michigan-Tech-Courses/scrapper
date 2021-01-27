@@ -8,9 +8,9 @@ export interface IScrappedSection {
   title: string;
   days: string;
   timeRange: string[] | null;
-  seats?: number;
-  seatsTaken?: number;
-  seatsAvailable?: number;
+  seats: number;
+  seatsTaken: number;
+  seatsAvailable: number;
   instructors: string;
   dateRange: string[];
   location: string | null;
