@@ -12,6 +12,6 @@
 
 - [ICourseOverview](../interfaces/lib/types.icourseoverview.md)
 - [IFaculty](../interfaces/lib/types.ifaculty.md)
-- [IScrappedSection](../interfaces/lib/types.iscrappedsection.md)
+- [IScrapedSection](../interfaces/lib/types.iscrapedsection.md)
 - [ISection](../interfaces/lib/types.isection.md)
 - [ISectionDetails](../interfaces/lib/types.isectiondetails.md)
