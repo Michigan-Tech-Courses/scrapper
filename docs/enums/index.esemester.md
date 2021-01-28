@@ -1,4 +1,4 @@
-[@mtucourses/scrapper](../README.md) / [Modules](../modules.md) / [index](../modules/index.md) / ESemester
+[@mtucourses/scraper](../README.md) / [Modules](../modules.md) / [index](../modules/index.md) / ESemester
 
 # Enumeration: ESemester
 
@@ -18,7 +18,7 @@
 
 • **fall**: = "Fall"
 
-Defined in: [lib/types.ts:44](https://github.com/Michigan-Tech-Courses/scrapper/blob/2406c1b/src/lib/types.ts#L44)
+Defined in: [lib/types.ts:44](https://github.com/Michigan-Tech-Courses/scrapper/blob/80c6098/src/lib/types.ts#L44)
 
 ___
 
@@ -26,7 +26,7 @@ ___
 
 • **spring**: = "Spring"
 
-Defined in: [lib/types.ts:45](https://github.com/Michigan-Tech-Courses/scrapper/blob/2406c1b/src/lib/types.ts#L45)
+Defined in: [lib/types.ts:45](https://github.com/Michigan-Tech-Courses/scrapper/blob/80c6098/src/lib/types.ts#L45)
 
 ___
 
@@ -34,4 +34,4 @@ ___
 
 • **summer**: = "Summer"
 
-Defined in: [lib/types.ts:46](https://github.com/Michigan-Tech-Courses/scrapper/blob/2406c1b/src/lib/types.ts#L46)
+Defined in: [lib/types.ts:46](https://github.com/Michigan-Tech-Courses/scrapper/blob/80c6098/src/lib/types.ts#L46)

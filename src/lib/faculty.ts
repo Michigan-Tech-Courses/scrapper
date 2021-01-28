@@ -8,7 +8,7 @@ import {removeEmptyElements, resolvePartialURL, trim} from './utils';
 export const getAllFaculty = async (): Promise<IFaculty[]> => {
   const limit = pLimit(3);
 
-  const scrappedPages = await Promise.all(FACULTY_PAGES.map(pageURL => limit(async () => {
+  const scrapedPages = await Promise.all(FACULTY_PAGES.map(pageURL => limit(async () => {
     const {body} = await got.get(pageURL);
 
     const $ = cheerio.load(body);
@@ -54,7 +54,7 @@ export const getAllFaculty = async (): Promise<IFaculty[]> => {
     return people;
   })));
 
-  const flatPeople = ([] as IFaculty[]).concat(...scrappedPages);
+  const flatPeople = ([] as IFaculty[]).concat(...scrapedPages);
 
   // Some people may work in multiple departments and thus appear twice
   const peopleMap = new Map<string, IFaculty>();

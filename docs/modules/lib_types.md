@@ -1,4 +1,4 @@
-[@mtucourses/scrapper](../README.md) / [Modules](../modules.md) / lib/types
+[@mtucourses/scraper](../README.md) / [Modules](../modules.md) / lib/types
 
 # Module: lib/types
 

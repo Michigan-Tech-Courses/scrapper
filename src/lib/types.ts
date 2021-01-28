@@ -1,4 +1,4 @@
-export interface IScrappedSection {
+export interface IScrapedSection {
   crn: string;
   subject: string;
   crse: string;

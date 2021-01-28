@@ -1,7 +1,7 @@
 import got from 'got';
 import cheerio from 'cheerio';
 import {URLSearchParams} from 'url';
-import {ICourseOverview, IScrappedSection, ISectionDetails} from './types';
+import {ICourseOverview, IScrapedSection, ISectionDetails} from './types';
 import {trim, getTermId, protectNaN} from './utils';
 
 /*
@@ -44,7 +44,7 @@ export const getAllSections = async (term: Date): Promise<ICourseOverview[]> => 
 
   const $ = cheerio.load(response.body);
 
-  const sections: IScrappedSection[] = [];
+  const sections: IScrapedSection[] = [];
 
   $('.datadisplaytable tr').each((_, element) => {
     const attributes = $(element).children('.dddefault, .dddefaultnoprint');
@@ -119,7 +119,7 @@ export const getAllSections = async (term: Date): Promise<ICourseOverview[]> => 
   });
 
   // Collect sections into courses
-  const coursesMap = new Map<string, IScrappedSection[]>();
+  const coursesMap = new Map<string, IScrapedSection[]>();
 
   sections.forEach(section => {
     const id = `${section.subject}${section.crse}`;

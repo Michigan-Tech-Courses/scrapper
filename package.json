@@ -1,5 +1,5 @@
 {
-  "name": "@mtucourses/scrapper",
+  "name": "@mtucourses/scraper",
   "version": "2.0.2",
   "description": "a package to scrape various information from Michigan Tech",
   "keywords": [
@@ -11,7 +11,7 @@
   ],
   "main": "dist/index.js",
   "types": "dts/index.d.ts",
-  "repository": "git@github.com:Michigan-Tech-Courses/scrapper",
+  "repository": "git@github.com:Michigan-Tech-Courses/scraper",
   "author": "Max Isom <hi@maxisom.me>",
   "license": "MIT",
   "files": [

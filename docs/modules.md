@@ -1,6 +1,6 @@
-[@mtucourses/scrapper](README.md) / Modules
+[@mtucourses/scraper](README.md) / Modules
 
-# @mtucourses/scrapper
+# @mtucourses/scraper
 
 ## Table of contents
 

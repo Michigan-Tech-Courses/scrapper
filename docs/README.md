@@ -1,15 +1,15 @@
-@mtucourses/scrapper / [Modules](modules.md)
+@mtucourses/scraper / [Modules](modules.md)
 
-# @mtucourses/scrapper
+# @mtucourses/scraper
 
-[![codecov](https://codecov.io/gh/Michigan-Tech-Courses/scrapper/branch/master/graph/badge.svg?token=E7AG8R5XN0)](https://codecov.io/gh/Michigan-Tech-Courses/scrapper)
+[![codecov](https://codecov.io/gh/Michigan-Tech-Courses/scraper/branch/master/graph/badge.svg?token=E7AG8R5XN0)](https://codecov.io/gh/Michigan-Tech-Courses/scraper)
 
 Scrapes various types of information from [Michigan Tech](https://www.mtu.edu/), including faculty members and offered courses.
 
 ## 🏗 Usage
 
 ```js
-const {getAllSections} = require('@mtucourses/scrapper');
+const {getAllSections} = require('@mtucourses/scraper');
 
 (async () => {
   const fallTerm = new Date();

@@ -1,4 +1,4 @@
-[@mtucourses/scrapper](../../README.md) / [Modules](../../modules.md) / [lib/types](../../modules/lib_types.md) / ICourseOverview
+[@mtucourses/scraper](../../README.md) / [Modules](../../modules.md) / [lib/types](../../modules/lib_types.md) / ICourseOverview
 
 # Interface: ICourseOverview
 
@@ -23,7 +23,7 @@
 
 • **crse**: *string*
 
-Defined in: [lib/types.ts:38](https://github.com/Michigan-Tech-Courses/scrapper/blob/2406c1b/src/lib/types.ts#L38)
+Defined in: [lib/types.ts:38](https://github.com/Michigan-Tech-Courses/scrapper/blob/80c6098/src/lib/types.ts#L38)
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 • **sections**: [*ISection*](types.isection.md)[]
 
-Defined in: [lib/types.ts:40](https://github.com/Michigan-Tech-Courses/scrapper/blob/2406c1b/src/lib/types.ts#L40)
+Defined in: [lib/types.ts:40](https://github.com/Michigan-Tech-Courses/scrapper/blob/80c6098/src/lib/types.ts#L40)
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **subject**: *string*
 
-Defined in: [lib/types.ts:37](https://github.com/Michigan-Tech-Courses/scrapper/blob/2406c1b/src/lib/types.ts#L37)
+Defined in: [lib/types.ts:37](https://github.com/Michigan-Tech-Courses/scrapper/blob/80c6098/src/lib/types.ts#L37)
 
 ___
 
@@ -47,4 +47,4 @@ ___
 
 • **title**: *string*
 
-Defined in: [lib/types.ts:39](https://github.com/Michigan-Tech-Courses/scrapper/blob/2406c1b/src/lib/types.ts#L39)
+Defined in: [lib/types.ts:39](https://github.com/Michigan-Tech-Courses/scrapper/blob/80c6098/src/lib/types.ts#L39)
