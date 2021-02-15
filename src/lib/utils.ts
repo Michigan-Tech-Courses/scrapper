@@ -9,6 +9,10 @@ export const removeEmptyElements = (arr: string[]) => arr.reduce<string[]>((accu
 }, []);
 
 export const resolvePartialURL = (url: string) => {
+  if (url.startsWith('http')) {
+    return url;
+  }
+
   if (!url.includes('mtu.edu')) {
     return `https://mtu.edu${url.startsWith('/') ? '' : '/'}${url}`;
   }
