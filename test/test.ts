@@ -66,7 +66,10 @@ test('getAllFaculty() works correctly', async t => {
     .reply(200, await fs.promises.readFile('./test/resources/cs-faculty.html'))
 
     .get('/chemistry/people-groups/faculty-staff/')
-    .reply(200, await fs.promises.readFile('./test/resources/chemistry-faculty.html'));
+    .reply(200, await fs.promises.readFile('./test/resources/chemistry-faculty.html'))
+
+    .get('/business/people-groups/faculty/')
+    .reply(200, await fs.promises.readFile('./test/resources/faculty-with-obfuscated-emails.html'));
 
   const people = await getAllFaculty();
 

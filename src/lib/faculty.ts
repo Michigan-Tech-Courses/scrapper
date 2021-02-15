@@ -3,7 +3,7 @@ import pLimit from 'p-limit';
 import cheerio from 'cheerio';
 import {FACULTY_PAGES} from './constants';
 import {IFaculty} from './types';
-import {removeEmptyElements, resolvePartialURL, trim} from './utils';
+import {decodeCloudflareObfuscatedEmail, removeEmptyElements, resolvePartialURL, trim} from './utils';
 
 export const getAllFaculty = async (): Promise<IFaculty[]> => {
   const limit = pLimit(3);
@@ -24,7 +24,16 @@ export const getAllFaculty = async (): Promise<IFaculty[]> => {
 
       const occupations = node.find('.personal > ul li').toArray().map(occupation => trim($(occupation).text()));
 
-      const email = trim(node.find('.left > .contact .email-address > a').text());
+      const emailElement = node.find('.left > .contact .email-address > a');
+
+      let email: string;
+
+      if (emailElement.find('span[data-cfemail]').length > 0) {
+        // Decode email
+        email = decodeCloudflareObfuscatedEmail(emailElement.find('span[data-cfemail]').attr('data-cfemail')!);
+      } else {
+        email = trim(emailElement.text());
+      }
 
       const phone = trim(node.find('.left > .contact .phone-number > a').text());
 

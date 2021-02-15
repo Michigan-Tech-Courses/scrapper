@@ -23,3 +23,17 @@ export const resolvePartialURL = (url: string) => {
 export const getTermId = (term: Date) => `${term.getFullYear()}${(term.getMonth() + 1).toString().padStart(2, '0')}`;
 
 export const protectNaN = (n: number) => Number.isNaN(n) ? 0 : n;
+
+export const decodeCloudflareObfuscatedEmail = (encoded: string) => {
+  let email = '';
+  let r = parseInt(encoded.substr(0, 2), 16);
+  let n;
+  let i;
+
+  for (n = 2; encoded.length - n; n += 2) {
+    i = parseInt(encoded.substr(n, 2), 16) ^ r;
+    email += String.fromCharCode(i);
+  }
+
+  return email;
+};
