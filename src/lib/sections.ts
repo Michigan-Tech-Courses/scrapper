@@ -187,7 +187,7 @@ export const getSectionDetails = async ({term, subject, crse, crn}: {term: Date;
   return {
     title,
     description,
-    instructors: instructors.split(',').map(i => trim(i)),
+    instructors: instructors === 'TBA' ? [] : instructors.split(',').map(i => trim(i)),
     prereqs: prereqs === '' ? null : prereqs,
     semestersOffered
   };
