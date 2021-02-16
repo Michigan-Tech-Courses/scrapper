@@ -20,7 +20,12 @@ export const getAllFaculty = async (): Promise<IFaculty[]> => {
     $('.person').each((_, element) => {
       const node = $(element);
 
-      const name = trim(node.find('.personal > h2').text());
+      let name = trim(node.find('.personal > h2').text());
+
+      // Remove any attributes after name
+      if (name.includes(',')) {
+        name = name.split(',')[0];
+      }
 
       const occupations = node.find('.personal > ul li').toArray().map(occupation => trim($(occupation).text()));
 
