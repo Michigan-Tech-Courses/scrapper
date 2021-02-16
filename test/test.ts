@@ -41,7 +41,43 @@ test('getSectionDetails() works correctly', async t => {
   t.snapshot(section);
 });
 
-// TODO: add test for details with multiple instructors
+test('getSectionDetails() works with prereqs', async t => {
+  const options = {term, subject: 'CS', crse: '123', crn: '123'};
+
+  const response = await fs.promises.readFile('./test/resources/section-with-prereqs.html');
+  nock('https://www.banweb.mtu.edu')
+    .get('/owassb/bwckschd.p_disp_listcrse')
+    .query({
+      term_in: '202008',
+      subj_in: options.subject,
+      crse_in: options.crse,
+      crn_in: options.crn
+    })
+    .reply(200, response);
+
+  const section = await getSectionDetails(options);
+
+  t.snapshot(section);
+});
+
+test('getSectionDetails() works with multiple instructors', async t => {
+  const options = {term, subject: 'CS', crse: '123', crn: '123'};
+
+  const response = await fs.promises.readFile('./test/resources/section-with-multiple-instructors.html');
+  nock('https://www.banweb.mtu.edu')
+    .get('/owassb/bwckschd.p_disp_listcrse')
+    .query({
+      term_in: '202008',
+      subj_in: options.subject,
+      crse_in: options.crse,
+      crn_in: options.crn
+    })
+    .reply(200, response);
+
+  const section = await getSectionDetails(options);
+
+  t.snapshot(section);
+});
 
 test('getSectionDetails() throws if section doesn\'t exist', async t => {
   const options = {term, subject: 'CS', crse: '123', crn: '123'};

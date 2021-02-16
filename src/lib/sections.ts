@@ -1,7 +1,7 @@
 import got from 'got';
 import cheerio from 'cheerio';
 import {URLSearchParams} from 'url';
-import {ICourseOverview, IScrapedSection, ISectionDetails} from './types';
+import {ESemester, ICourseOverview, IScrapedSection, ISectionDetails} from './types';
 import {trim, getTermId, protectNaN} from './utils';
 
 /*
@@ -177,10 +177,18 @@ export const getSectionDetails = async ({term, subject, crse, crn}: {term: Date;
   const description = trim($('p.small').text());
   const instructors = trim($('[summary="This table lists the scheduled meeting times and assigned instructors for this class.."] tr:nth-child(2) td:nth-child(6)').text());
 
+  const prereqSibling = $('strong').filter((_, element) => $(element).text().includes('Requisite'));
+
+  const prereqs = trim(prereqSibling.parent().contents().filter((_, element) => element.type === 'text').text());
+
+  const semestersOfferedSibling = $('strong').filter((_, element) => $(element).text().includes('Offered'));
+  const semestersOffered = trim(semestersOfferedSibling.parent().contents().filter((_, element) => element.type === 'text').text()).split(',').map(s => s.trim()) as ESemester[];
+
   return {
     title,
     description,
     instructors: instructors.split(',').map(i => trim(i)),
-    semestersOffered: []
+    prereqs: prereqs === '' ? null : prereqs,
+    semestersOffered
   };
 };
