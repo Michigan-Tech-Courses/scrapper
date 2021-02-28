@@ -67,6 +67,10 @@ export const getAllSections = async (term: Date): Promise<ICourseOverview[]> => 
 
     if (rawCredits.includes('-')) {
       credits = rawCredits.split('-').map((credit: string) => Number(credit));
+    } else if (rawCredits.includes('/')) {
+      credits = rawCredits.split('/').map((credit: string) => Number(credit));
+    } else if (Number.isNaN((rawCredits))) {
+      credits = [0];
     } else {
       credits = [Number(rawCredits)];
     }
