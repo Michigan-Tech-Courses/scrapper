@@ -37,3 +37,19 @@ export const decodeCloudflareObfuscatedEmail = (encoded: string) => {
 
   return email;
 };
+
+export const getNumberOfUniqueValues = (arr: string[]) => {
+  const m = new Map<string, number>();
+
+  arr.forEach(element => {
+    const currentElement = m.get(element);
+
+    if (currentElement) {
+      m.set(element, currentElement + 1);
+    } else {
+      m.set(element, 1);
+    }
+  });
+
+  return m.size;
+};

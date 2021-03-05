@@ -2,7 +2,7 @@ import got from 'got';
 import cheerio from 'cheerio';
 import {URLSearchParams} from 'url';
 import {ESemester, ICourseOverview, IScrapedSection, ISectionDetails} from './types';
-import {trim, getTermId, protectNaN} from './utils';
+import {trim, getTermId, protectNaN, getNumberOfUniqueValues} from './utils';
 
 /*
  * The month of term must be sent to the first month of a term at Michigan Tech.
@@ -134,12 +134,12 @@ export const getAllSections = async (term: Date): Promise<ICourseOverview[]> => 
 
   for (let [,sections] of coursesMap) {
     // Guaranteed that at least one section exists, otherwise it wouldn't be in map
-    const sampleSection = sections[0];
+    const sampleSection = sections[0]!;
 
     courses.push({
       subject: sampleSection.subject,
       crse: sampleSection.crse,
-      title: sampleSection.title,
+      title: getNumberOfUniqueValues(sections.map(s => s.title)) > 1 ? `${sampleSection.subject as string} ${sampleSection.crse as string}` : sampleSection.title,
       sections: sections.map(s => ({
         crn: s.crn,
         section: s.section,
