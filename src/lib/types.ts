@@ -52,6 +52,7 @@ export interface ISectionDetails {
   instructors: string[];
   semestersOffered: ESemester[];
   prereqs: string | null;
+  location: string;
 }
 
 export interface IFaculty {

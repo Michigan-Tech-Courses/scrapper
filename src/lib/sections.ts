@@ -181,6 +181,8 @@ export const getSectionDetails = async ({term, subject, crse, crn}: {term: Date;
   const description = trim($('p.small').text());
   const instructors = trim($('[summary="This table lists the scheduled meeting times and assigned instructors for this class.."] tr:nth-child(2) td:nth-child(6)').text());
 
+  const location = trim($('[summary="This table lists the scheduled meeting times and assigned instructors for this class.."] tr:nth-child(2) td:nth-child(4)').text());
+
   const prereqSibling = $('strong').filter((_, element) => $(element).text().includes('Requisite'));
 
   const prereqs = trim(prereqSibling.parent().contents().filter((_, element) => element.type === 'text').text());
@@ -193,6 +195,7 @@ export const getSectionDetails = async ({term, subject, crse, crn}: {term: Date;
     description,
     instructors: instructors === 'TBA' ? [] : instructors.split(',').map(i => trim(i)),
     prereqs: prereqs === '' ? null : prereqs,
-    semestersOffered
+    semestersOffered,
+    location
   };
 };
