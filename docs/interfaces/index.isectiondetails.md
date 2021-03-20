@@ -14,6 +14,7 @@
 
 - [description](index.isectiondetails.md#description)
 - [instructors](index.isectiondetails.md#instructors)
+- [location](index.isectiondetails.md#location)
 - [prereqs](index.isectiondetails.md#prereqs)
 - [semestersOffered](index.isectiondetails.md#semestersoffered)
 - [title](index.isectiondetails.md#title)
@@ -24,7 +25,7 @@
 
 • **description**: *string*
 
-Defined in: [lib/types.ts:51](https://github.com/Michigan-Tech-Courses/scrapper/blob/127e055/src/lib/types.ts#L51)
+Defined in: [lib/types.ts:51](https://github.com/Michigan-Tech-Courses/scrapper/blob/1a7bce8/src/lib/types.ts#L51)
 
 ___
 
@@ -32,7 +33,15 @@ ___
 
 • **instructors**: *string*[]
 
-Defined in: [lib/types.ts:52](https://github.com/Michigan-Tech-Courses/scrapper/blob/127e055/src/lib/types.ts#L52)
+Defined in: [lib/types.ts:52](https://github.com/Michigan-Tech-Courses/scrapper/blob/1a7bce8/src/lib/types.ts#L52)
+
+___
+
+### location
+
+• **location**: *string*
+
+Defined in: [lib/types.ts:55](https://github.com/Michigan-Tech-Courses/scrapper/blob/1a7bce8/src/lib/types.ts#L55)
 
 ___
 
@@ -40,7 +49,7 @@ ___
 
 • **prereqs**: *null* \| *string*
 
-Defined in: [lib/types.ts:54](https://github.com/Michigan-Tech-Courses/scrapper/blob/127e055/src/lib/types.ts#L54)
+Defined in: [lib/types.ts:54](https://github.com/Michigan-Tech-Courses/scrapper/blob/1a7bce8/src/lib/types.ts#L54)
 
 ___
 
@@ -48,7 +57,7 @@ ___
 
 • **semestersOffered**: [*ESemester*](../enums/lib/types.esemester.md)[]
 
-Defined in: [lib/types.ts:53](https://github.com/Michigan-Tech-Courses/scrapper/blob/127e055/src/lib/types.ts#L53)
+Defined in: [lib/types.ts:53](https://github.com/Michigan-Tech-Courses/scrapper/blob/1a7bce8/src/lib/types.ts#L53)
 
 ___
 
@@ -56,4 +65,4 @@ ___
 
 • **title**: *string*
 
-Defined in: [lib/types.ts:50](https://github.com/Michigan-Tech-Courses/scrapper/blob/127e055/src/lib/types.ts#L50)
+Defined in: [lib/types.ts:50](https://github.com/Michigan-Tech-Courses/scrapper/blob/1a7bce8/src/lib/types.ts#L50)
