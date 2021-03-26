@@ -188,7 +188,13 @@ export const getSectionDetails = async ({term, subject, crse, crn}: {term: Date;
   const prereqs = trim(prereqSibling.parent().contents().filter((_, element) => element.type === 'text').text());
 
   const semestersOfferedSibling = $('strong').filter((_, element) => $(element).text().includes('Offered'));
-  const semestersOffered = trim(semestersOfferedSibling.parent().contents().filter((_, element) => element.type === 'text').text()).split(',').map(s => s.trim()) as ESemester[];
+  const semestersOffered = trim(semestersOfferedSibling.parent().contents().filter((_, element) => element.type === 'text').text()).split(',').reduce<ESemester[]>((semesters, s) => {
+    if (Object.values(ESemester).includes(s.trim() as ESemester)) {
+      return [...semesters, s.trim() as ESemester];
+    }
+
+    return semesters;
+  }, []);
 
   return {
     title,

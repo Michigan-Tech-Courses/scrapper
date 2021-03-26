@@ -96,6 +96,25 @@ test('getSectionDetails() throws if section doesn\'t exist', async t => {
   await t.throwsAsync(async () => getSectionDetails(options), {message: 'Course not found'});
 });
 
+test('getSectionDetails() works for courses offered on demand', async t => {
+  const options = {term, subject: 'CS', crse: '123', crn: '123'};
+
+  const response = await fs.promises.readFile('./test/resources/section-offered-on-demand.html');
+  nock('https://www.banweb.mtu.edu')
+    .get('/owassb/bwckschd.p_disp_listcrse')
+    .query({
+      term_in: '202008',
+      subj_in: options.subject,
+      crse_in: options.crse,
+      crn_in: options.crn
+    })
+    .reply(200, response);
+
+  const result = await getSectionDetails(options);
+
+  t.is(result.semestersOffered.length, 0);
+});
+
 test('getAllFaculty() works correctly', async t => {
   nock('https://www.mtu.edu')
     .get('/cs/department/people/')
