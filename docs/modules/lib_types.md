@@ -15,3 +15,4 @@
 - [IScrapedSection](../interfaces/lib/types.iscrapedsection.md)
 - [ISection](../interfaces/lib/types.isection.md)
 - [ISectionDetails](../interfaces/lib/types.isectiondetails.md)
+- [ITransferCourse](../interfaces/lib/types.itransfercourse.md)

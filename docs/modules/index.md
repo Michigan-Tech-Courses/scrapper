@@ -15,11 +15,13 @@
 - [IScrapedSection](../interfaces/index.iscrapedsection.md)
 - [ISection](../interfaces/index.isection.md)
 - [ISectionDetails](../interfaces/index.isectiondetails.md)
+- [ITransferCourse](../interfaces/index.itransfercourse.md)
 
 ### Functions
 
 - [getAllFaculty](index.md#getallfaculty)
 - [getAllSections](index.md#getallsections)
+- [getAllTransferCourses](index.md#getalltransfercourses)
 - [getSectionDetails](index.md#getsectiondetails)
 
 ## Functions
@@ -30,7 +32,7 @@
 
 **Returns:** *Promise*<[*IFaculty*](../interfaces/lib/types.ifaculty.md)[]\>
 
-Defined in: [lib/faculty.ts:8](https://github.com/Michigan-Tech-Courses/scrapper/blob/f3f2f09/src/lib/faculty.ts#L8)
+Defined in: [lib/faculty.ts:8](https://github.com/Michigan-Tech-Courses/scrapper/blob/cd928c8/src/lib/faculty.ts#L8)
 
 ___
 
@@ -46,7 +48,17 @@ Name | Type |
 
 **Returns:** *Promise*<[*ICourseOverview*](../interfaces/lib/types.icourseoverview.md)[]\>
 
-Defined in: [lib/sections.ts:12](https://github.com/Michigan-Tech-Courses/scrapper/blob/f3f2f09/src/lib/sections.ts#L12)
+Defined in: [lib/sections.ts:12](https://github.com/Michigan-Tech-Courses/scrapper/blob/cd928c8/src/lib/sections.ts#L12)
+
+___
+
+### getAllTransferCourses
+
+▸ `Const`**getAllTransferCourses**(): *Promise*<[*ITransferCourse*](../interfaces/lib/types.itransfercourse.md)[]\>
+
+**Returns:** *Promise*<[*ITransferCourse*](../interfaces/lib/types.itransfercourse.md)[]\>
+
+Defined in: [lib/transfer.ts:6](https://github.com/Michigan-Tech-Courses/scrapper/blob/cd928c8/src/lib/transfer.ts#L6)
 
 ___
 
@@ -62,4 +74,4 @@ Name | Type |
 
 **Returns:** *Promise*<[*ISectionDetails*](../interfaces/lib/types.isectiondetails.md)\>
 
-Defined in: [lib/sections.ts:164](https://github.com/Michigan-Tech-Courses/scrapper/blob/f3f2f09/src/lib/sections.ts#L164)
+Defined in: [lib/sections.ts:164](https://github.com/Michigan-Tech-Courses/scrapper/blob/cd928c8/src/lib/sections.ts#L164)
