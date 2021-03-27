@@ -66,3 +66,18 @@ export interface IFaculty {
   photoURL: string | null;
   interests: string[];
 }
+
+export interface ITransferCourse {
+  from: {
+    college: string;
+    subject: string;
+    crse: string;
+    credits: number;
+  };
+  to: {
+    title: string;
+    subject: string;
+    crse: string;
+    credits: number;
+  };
+}

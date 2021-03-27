@@ -6,7 +6,7 @@ import * as constants from './helpers/constants';
 
 td.replace('../src/lib/constants', constants);
 
-import {getAllFaculty, getAllSections, getSectionDetails} from '../src';
+import {getAllSections, getSectionDetails} from '../src';
 
 const term = new Date();
 term.setFullYear(2020, 7);
@@ -114,24 +114,3 @@ test('getSectionDetails() works for courses offered on demand', async t => {
 
   t.is(result.semestersOffered.length, 0);
 });
-
-test('getAllFaculty() works correctly', async t => {
-  nock('https://www.mtu.edu')
-    .get('/cs/department/people/')
-    .reply(200, await fs.promises.readFile('./test/resources/cs-faculty.html'))
-
-    .get('/chemistry/people-groups/faculty-staff/')
-    .reply(200, await fs.promises.readFile('./test/resources/chemistry-faculty.html'))
-
-    .get('/business/people-groups/faculty/')
-    .reply(200, await fs.promises.readFile('./test/resources/faculty-with-obfuscated-emails.html'))
-
-    .get('/cee/people/faculty-staff/')
-    .reply(200, await fs.promises.readFile('./test/resources/faculty-with-attributes.html'));
-
-  const people = await getAllFaculty();
-
-  t.snapshot(people);
-});
-
-// TODO: add test for TBA instructor
