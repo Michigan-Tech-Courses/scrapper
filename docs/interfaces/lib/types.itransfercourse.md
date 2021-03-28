@@ -30,7 +30,7 @@ Name | Type |
 `crse` | *string* |
 `subject` | *string* |
 
-Defined in: [lib/types.ts:71](https://github.com/Michigan-Tech-Courses/scrapper/blob/cd928c8/src/lib/types.ts#L71)
+Defined in: [lib/types.ts:71](https://github.com/Michigan-Tech-Courses/scrapper/blob/5f86e59/src/lib/types.ts#L71)
 
 ___
 
@@ -47,4 +47,4 @@ Name | Type |
 `subject` | *string* |
 `title` | *string* |
 
-Defined in: [lib/types.ts:77](https://github.com/Michigan-Tech-Courses/scrapper/blob/cd928c8/src/lib/types.ts#L77)
+Defined in: [lib/types.ts:77](https://github.com/Michigan-Tech-Courses/scrapper/blob/5f86e59/src/lib/types.ts#L77)
