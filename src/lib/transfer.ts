@@ -47,15 +47,17 @@ const getAllTransferCourses = async (): Promise<ITransferCourse[]> => {
 
       const collegeName = table.find('tr:first-child td:first-child').text().trim();
 
+      let theseCourses: ITransferCourse[] = [];
+
       table.children().each((i, row) => {
         // Skip header
-        if (i === 0) {
+        if ([0, 1].includes(i)) {
           return;
         }
 
         const r = $(row);
 
-        courses.push({
+        theseCourses.push({
           from: {
             college: collegeName,
             subject: r.find('td:nth-child(1)').text(),
@@ -70,6 +72,19 @@ const getAllTransferCourses = async (): Promise<ITransferCourse[]> => {
           }
         });
       });
+
+      // Some courses can be transfered as two different things
+      theseCourses = theseCourses.map((course, i) => {
+        if (course.from.subject === '' && i > 0) {
+          const lastCourse = theseCourses[i - 1];
+
+          return {from: lastCourse.from, to: course.to};
+        }
+
+        return course;
+      });
+
+      courses.push(...theseCourses);
     }));
   }));
 
