@@ -70,6 +70,7 @@ export interface IFaculty {
 export interface ITransferCourse {
   from: {
     college: string;
+    state: string;
     subject: string;
     crse: string;
     credits: number;

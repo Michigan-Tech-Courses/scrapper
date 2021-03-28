@@ -60,6 +60,7 @@ const getAllTransferCourses = async (): Promise<ITransferCourse[]> => {
         theseCourses.push({
           from: {
             college: collegeName,
+            state,
             subject: r.find('td:nth-child(1)').text(),
             crse: r.find('td:nth-child(2)').text(),
             credits: parseInt(r.find('td:nth-child(3)').text(), 10)
