@@ -14,7 +14,7 @@ const getAllTransferCourses = async (): Promise<ITransferCourse[]> => {
     states.push($(element).attr('value')?.trim() ?? '');
   });
 
-  const throttledGotPost = pThrottle({limit: 4, interval: 264})(got.post) as unknown as typeof got.post;
+  const throttledGotPost = pThrottle({limit: 2, interval: 264})(got.post) as unknown as typeof got.post;
 
   const courses: ITransferCourse[] = [];
 
