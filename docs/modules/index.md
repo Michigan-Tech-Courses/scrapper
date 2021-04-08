@@ -32,7 +32,7 @@
 
 **Returns:** *Promise*<[*IFaculty*](../interfaces/lib/types.ifaculty.md)[]\>
 
-Defined in: [lib/faculty.ts:8](https://github.com/Michigan-Tech-Courses/scrapper/blob/01f9f83/src/lib/faculty.ts#L8)
+Defined in: [lib/faculty.ts:8](https://github.com/Michigan-Tech-Courses/scrapper/blob/8076fb8/src/lib/faculty.ts#L8)
 
 ___
 
@@ -48,7 +48,7 @@ Name | Type |
 
 **Returns:** *Promise*<[*ICourseOverview*](../interfaces/lib/types.icourseoverview.md)[]\>
 
-Defined in: [lib/sections.ts:12](https://github.com/Michigan-Tech-Courses/scrapper/blob/01f9f83/src/lib/sections.ts#L12)
+Defined in: [lib/sections.ts:12](https://github.com/Michigan-Tech-Courses/scrapper/blob/8076fb8/src/lib/sections.ts#L12)
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 **Returns:** *Promise*<[*ITransferCourse*](../interfaces/lib/types.itransfercourse.md)[]\>
 
-Defined in: [lib/transfer.ts:6](https://github.com/Michigan-Tech-Courses/scrapper/blob/01f9f83/src/lib/transfer.ts#L6)
+Defined in: [lib/transfer.ts:7](https://github.com/Michigan-Tech-Courses/scrapper/blob/8076fb8/src/lib/transfer.ts#L7)
 
 ___
 
@@ -74,4 +74,4 @@ Name | Type |
 
 **Returns:** *Promise*<[*ISectionDetails*](../interfaces/lib/types.isectiondetails.md)\>
 
-Defined in: [lib/sections.ts:164](https://github.com/Michigan-Tech-Courses/scrapper/blob/01f9f83/src/lib/sections.ts#L164)
+Defined in: [lib/sections.ts:164](https://github.com/Michigan-Tech-Courses/scrapper/blob/8076fb8/src/lib/sections.ts#L164)
