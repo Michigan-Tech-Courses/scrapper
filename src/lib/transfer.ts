@@ -2,6 +2,7 @@ import got from 'got';
 import cheerio from 'cheerio';
 import pThrottle from 'p-throttle';
 import {ITransferCourse} from './types';
+import {protectNaN} from './utils';
 
 const getAllTransferCourses = async (): Promise<ITransferCourse[]> => {
   const {body} = await got('https://www.banweb.mtu.edu/owassb/mtu_transfer_detail.P_TRNS_STATE');
@@ -63,13 +64,13 @@ const getAllTransferCourses = async (): Promise<ITransferCourse[]> => {
             state,
             subject: r.find('td:nth-child(1)').text(),
             crse: r.find('td:nth-child(2)').text(),
-            credits: parseInt(r.find('td:nth-child(3)').text(), 10)
+            credits: protectNaN(parseInt(r.find('td:nth-child(3)').text(), 10))
           },
           to: {
             title: r.find('td:nth-child(4)').text(),
             subject: r.find('td:nth-child(5)').text(),
             crse: r.find('td:nth-child(6)').text(),
-            credits: parseInt(r.find('td:nth-child(7)').text(), 10)
+            credits: protectNaN(parseInt(r.find('td:nth-child(7)').text(), 10))
           }
         });
       });
