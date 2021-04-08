@@ -25,3 +25,21 @@ test('getAllTransferCourses() works correctly', async t => {
 
   t.snapshot(courses);
 });
+
+test('getAllTransferCourses() works with strange layout', async t => {
+  nock('https://www.banweb.mtu.edu')
+    .get('/owassb/mtu_transfer_detail.P_TRNS_STATE')
+    .reply(200, await fs.promises.readFile('./test/resources/transfer-states.html'));
+
+  nock('https://www.banweb.mtu.edu')
+    .post('/owassb/mtu_transfer_detail.P_TRNS_SCHOOL')
+    .reply(200, await fs.promises.readFile('./test/resources/transfer-colleges.html'));
+
+  nock('https://www.banweb.mtu.edu')
+    .post('/owassb/mtu_transfer_detail.P_TRNS_FULL')
+    .reply(200, await fs.promises.readFile('./test/resources/transfer-courses-weird-layout.html'));
+
+  const courses = await getAllTransferCourses();
+
+  t.snapshot(courses);
+});

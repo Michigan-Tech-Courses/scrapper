@@ -78,9 +78,13 @@ const getAllTransferCourses = async (): Promise<ITransferCourse[]> => {
       // Some courses can be transfered as two different things
       theseCourses = theseCourses.map((course, i) => {
         if (course.from.subject === '' && i > 0) {
-          const lastCourse = theseCourses[i - 1];
+          for (let j = i - 1; j >= 0; j--) {
+            const maybeDefinedCourse = theseCourses[j];
 
-          return {from: lastCourse.from, to: course.to};
+            if (maybeDefinedCourse.from.subject !== '') {
+              return {from: maybeDefinedCourse.from, to: course.to};
+            }
+          }
         }
 
         return course;
