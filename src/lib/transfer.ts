@@ -5,7 +5,12 @@ import {ITransferCourse} from './types';
 import {protectNaN} from './utils';
 
 const getAllTransferCourses = async (): Promise<ITransferCourse[]> => {
-  const {body} = await got('https://www.banweb.mtu.edu/owassb/mtu_transfer_detail.P_TRNS_STATE');
+  const {body, url} = await got('https://www.banweb.mtu.edu/owassb/mtu_transfer_detail.P_TRNS_STATE');
+
+  if (url.includes('down')) {
+    // Banner services are down
+    throw new Error('Banner services are currently down.');
+  }
 
   const $ = cheerio.load(body);
 

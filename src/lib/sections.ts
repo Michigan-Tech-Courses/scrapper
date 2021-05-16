@@ -42,6 +42,11 @@ export const getAllSections = async (term: Date): Promise<ICourseOverview[]> => 
     ])
   });
 
+  if (response.url.includes('down')) {
+    // Banner services are down
+    throw new Error('Banner services are currently down.');
+  }
+
   const $ = cheerio.load(response.body);
 
   const sections: IScrapedSection[] = [];
