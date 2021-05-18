@@ -4,12 +4,13 @@ import cheerio from 'cheerio';
 import {FACULTY_PAGES} from './constants';
 import {IFaculty} from './types';
 import {decodeCloudflareObfuscatedEmail, removeEmptyElements, resolvePartialURL, trim} from './utils';
+import gotWrapper from './got';
 
 export const getAllFaculty = async (): Promise<IFaculty[]> => {
   const limit = pLimit(3);
 
   const scrapedPages = await Promise.all(FACULTY_PAGES.map(pageURL => limit(async () => {
-    const {body} = await got.get(pageURL);
+    const {body} = await gotWrapper(got.get(pageURL));
 
     const $ = cheerio.load(body);
 

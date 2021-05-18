@@ -3,6 +3,7 @@ import cheerio from 'cheerio';
 import {URLSearchParams} from 'url';
 import {ESemester, ICourseOverview, IScrapedSection, ISectionDetails} from './types';
 import {trim, getTermId, protectNaN, getNumberOfUniqueValues} from './utils';
+import gotWrapper from './got';
 
 /*
  * The month of term must be sent to the first month of a term at Michigan Tech.
@@ -10,7 +11,7 @@ import {trim, getTermId, protectNaN, getNumberOfUniqueValues} from './utils';
  * fallTerm.setMonth(7); // zero-indexed
  */
 export const getAllSections = async (term: Date): Promise<ICourseOverview[]> => {
-  const response = await got.get('https://www.banweb.mtu.edu/pls/owa/bzckschd.p_get_crse_unsec', {
+  const response = await gotWrapper(got.get('https://www.banweb.mtu.edu/pls/owa/bzckschd.p_get_crse_unsec', {
     searchParams: new URLSearchParams([
       ['term_in', getTermId(term)],
       ['sel_subj', 'dummy'],
@@ -40,12 +41,7 @@ export const getAllSections = async (term: Date): Promise<ICourseOverview[]> => 
       ['end_mi', '0'],
       ['end_ap', 'a']
     ])
-  });
-
-  if (response.url.includes('down')) {
-    // Banner services are down
-    throw new Error('Banner services are currently down.');
-  }
+  }));
 
   const $ = cheerio.load(response.body);
 
@@ -167,14 +163,14 @@ export const getAllSections = async (term: Date): Promise<ICourseOverview[]> => 
 };
 
 export const getSectionDetails = async ({term, subject, crse, crn}: {term: Date; subject: string; crse: string; crn: string}): Promise<ISectionDetails> => {
-  const {body} = await got.get('https://www.banweb.mtu.edu/owassb/bwckschd.p_disp_listcrse', {
+  const {body} = await gotWrapper(got.get('https://www.banweb.mtu.edu/owassb/bwckschd.p_disp_listcrse', {
     searchParams: {
       term_in: getTermId(term),
       subj_in: subject,
       crse_in: crse,
       crn_in: crn
     }
-  });
+  }));
 
   const $ = cheerio.load(body);
 

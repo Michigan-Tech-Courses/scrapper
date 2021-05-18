@@ -3,14 +3,10 @@ import cheerio from 'cheerio';
 import pThrottle from 'p-throttle';
 import {ITransferCourse} from './types';
 import {protectNaN} from './utils';
+import gotWrapper from './got';
 
 const getAllTransferCourses = async (): Promise<ITransferCourse[]> => {
-  const {body, url} = await got('https://www.banweb.mtu.edu/owassb/mtu_transfer_detail.P_TRNS_STATE');
-
-  if (url.includes('down')) {
-    // Banner services are down
-    throw new Error('Banner services are currently down.');
-  }
+  const {body} = await gotWrapper(got('https://www.banweb.mtu.edu/owassb/mtu_transfer_detail.P_TRNS_STATE'));
 
   const $ = cheerio.load(body);
 
@@ -25,11 +21,11 @@ const getAllTransferCourses = async (): Promise<ITransferCourse[]> => {
   const courses: ITransferCourse[] = [];
 
   await Promise.all(states.map(async state => {
-    const {body} = await throttledGotPost('https://www.banweb.mtu.edu/owassb/mtu_transfer_detail.P_TRNS_SCHOOL', {
+    const {body} = await gotWrapper(throttledGotPost('https://www.banweb.mtu.edu/owassb/mtu_transfer_detail.P_TRNS_SCHOOL', {
       form: {
         state_code: state
       }
-    });
+    }));
 
     const $ = cheerio.load(body);
 
@@ -40,12 +36,12 @@ const getAllTransferCourses = async (): Promise<ITransferCourse[]> => {
     });
 
     await Promise.all(colleges.map(async college => {
-      const {body} = await throttledGotPost('https://www.banweb.mtu.edu/owassb/mtu_transfer_detail.P_TRNS_FULL', {
+      const {body} = await gotWrapper(throttledGotPost('https://www.banweb.mtu.edu/owassb/mtu_transfer_detail.P_TRNS_FULL', {
         form: {
           SBGI_CODE: college,
           state
         }
-      });
+      }));
 
       const $ = cheerio.load(body);
 
